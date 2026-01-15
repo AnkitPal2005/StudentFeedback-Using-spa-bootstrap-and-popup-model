@@ -27,13 +27,19 @@ namespace StudentFeedback.Controllers
             return PartialView("_FeedbackList", data);
         }
         [HttpPost]
-        public IActionResult Add(Feedback model)
+        public IActionResult Add(FeedbackVM model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
-            _repo.Add(model);
+            var vm = new Feedback
+            {
+                Name = model.StudentName,
+                Message = model.Message,
+
+            };
+            _repo.Add(vm);
             return PartialView("_FeedbackList",_repo.GetAll());
         }
         [HttpPost]

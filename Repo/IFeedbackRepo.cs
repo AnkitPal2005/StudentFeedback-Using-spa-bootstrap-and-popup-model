@@ -9,5 +9,6 @@ namespace StudentFeedback.Repo
         void Delete(int id);
         Feedback GetById(int id);
         void Update(Feedback feedback);
+        
     }
 }

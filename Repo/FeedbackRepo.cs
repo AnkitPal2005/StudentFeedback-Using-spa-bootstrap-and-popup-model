@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace StudentFeedback.Repo
 {
-    public class FeedbackRepo:IFeedbackRepo
+    public class FeedbackRepo : IFeedbackRepo
     {
         private readonly IConfiguration _configuration;
         public FeedbackRepo(IConfiguration configuration)
