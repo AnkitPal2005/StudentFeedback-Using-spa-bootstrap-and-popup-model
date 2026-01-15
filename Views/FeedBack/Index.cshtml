@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Student Feedback SPA";
+}
+<h2>Student FeedBack</h2>
+<div class="feedback-form">
+    <input type="text" name="Name" id="txtName" value="" placeholder="Enter The Student Name"/>
+    <br /><br />
+    <textarea id="txtMessage" name="Message" placeholder="Enter the Feedback"></textarea>
+    <br /><br />
+    <input type="hidden" id="hdid" name="Id" value="0"/>
+    <button id="btnSave">Save</button>
+</div>
+<hr />
+<div id="Feedback-Container"></div>
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Feedback</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modalId" />
+                <div class="mb-2">
+                    <label>Name</label>
+                    <input type="text" id="modalName" class="form-control" />
+                </div>
+                <div class="mb-2">
+                    <label>Message</label>
+                    <textarea id="modalMessage" class="form-control"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" id="btnModalUpdate">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Feedback.js"></script>
+}   

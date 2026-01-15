@@ -1,0 +1,17 @@
+﻿@model List<StudentFeedback.Models.Feedback>
+<table border="1" cellpadding="5" class="feedback-table">
+    <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var s in Model)
+    {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Message</td>
+            <td><button class="btnDelete" data-id="@s.Id">Delete</button>
+            <button class="btnEdit" data-id="@s.Id">Edit</button></td>
+        </tr>
+    }
+</table>
