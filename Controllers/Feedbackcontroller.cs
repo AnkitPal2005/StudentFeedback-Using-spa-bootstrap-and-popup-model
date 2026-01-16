@@ -15,6 +15,12 @@ namespace StudentFeedback.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult Count()
+        {
+            var count=_repo.GetAll().Count;
+            return Json(count);
+        }
+        [HttpGet]
         public IActionResult GetById(int id)
         {
             var data= _repo.GetById(id);
@@ -35,7 +41,7 @@ namespace StudentFeedback.Controllers
             }
             var vm = new Feedback
             {
-                Name = model.StudentName,
+                Name = model.Student,
                 Message = model.Message,
 
             };

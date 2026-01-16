@@ -18,7 +18,7 @@ namespace StudentFeedback.Repo
         {
             return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
         }
-        public Feedback GetById(int id)
+        public Feedback? GetById(int id)
         {
             using var con=Connection();
             string sql = @"Select * From Feedback Where Id=@id";
@@ -48,5 +48,12 @@ namespace StudentFeedback.Repo
             string sql = @"Update Feedback Set Name=@Name,Message=@Message Where ID=@Id";
             con.Execute(sql,feedback);
         }
+        public int Count()
+        {
+            using var con = Connection();
+            string sql = "SELECT COUNT(*) FROM Feedback";
+            return con.ExecuteScalar<int>(sql);
+        }
+
     }
 }

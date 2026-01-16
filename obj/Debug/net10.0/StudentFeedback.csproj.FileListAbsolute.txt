@@ -66,7 +66,6 @@ C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Deb
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\scopedcss\bundle\StudentFeedback.styles.css
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\scopedcss\projectbundle\StudentFeedback.bundle.scp.css
-C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\6dlpc1qy5d-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\7hdv5b42zg-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\h4zs69u1t0-{0}-o1o13a6vjx-o1o13a6vjx.gz
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\ybovtltkoy-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
@@ -145,4 +144,5 @@ C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Deb
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\ref\StudentFeedback.dll
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\4jmsk0j9o4-{0}-l3j12vhiur-l3j12vhiur.gz
 C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\StudentFeedback.sourcelink.json
-C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\yytfk84m50-{0}-y6r63scx85-y6r63scx85.gz
+C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\6dlpc1qy5d-{0}-1gn14hob9e-1gn14hob9e.gz
+C:\Users\WottaCore - 01\PracticeProjects\StudentFeedback\StudentFeedback\obj\Debug\net10.0\compressed\yytfk84m50-{0}-glh90h7r5i-glh90h7r5i.gz

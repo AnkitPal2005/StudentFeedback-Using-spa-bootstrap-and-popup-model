@@ -1,12 +1,38 @@
-﻿$(document).ready(function () {
-
-    loadFeedback();
+﻿$(function () {
+    //loadFeedback();
+    checkDataStatus();
+    function checkDataStatus() {
+        $.ajax({
+            url: "/Feedback/Count",
+            type: "GET",
+            success: function (count) {
+                if (count == 0) {
+                    $("#statusText").text("No Student Feedback Available");
+                    $("#btnShowData").text("Add Student Feedback");
+                    $("#btnShowData").removeClass("d-none");
+                   
+                }
+                else {
+                    $("#statusText").text(count + " Student Feedback Available");
+                    $("#btnShowData").text("Show Student Feedback");
+                    $("#btnShowData").removeClass("d-none");
+                }
+            }
+        });
+    }
+    //show table button
+    $("#btnShowData").on("click",function () {
+        $("#landingArea").hide();
+        $("#Feedback-Container").removeClass("d-none");
+        $("#btnOpenAddModal").removeClass("d-none");
+        loadFeedback();
+    })
 
   //ADD
-    $("#btnSave").click(function () {
+    $("#btnModalSave").on("click",function () {
 
-        let name = $("#txtName").val();
-        let message = $("#txtMessage").val();
+        let name = $("#addName").val();
+        let message = $("#addMessage").val();
 
         if (name === "" || message === "") {
             alert("Name And Message Required");
@@ -17,13 +43,14 @@
             url: "/Feedback/Add",
             type: "POST",
             data: {
-                StudentName: name,
+                Student: name,
                 Message: message
             },
             success: function (res) {
                 $("#Feedback-Container").html(res);
-                $("#txtName").val("");
-                $("#txtMessage").val("");
+                $("#addName").val("");
+                $("#addMessage").val("");
+                $("#addModal").modal("hide");
             }
         });
     });
@@ -42,6 +69,12 @@
             }
         });
     });
+    //open add modal
+    $("#btnOpenAddModal").on("click", function () {
+        $("#addName").val("");
+        $("#addMessage").val("");
+        $("#addModal").modal("show");
+    })
 
    //open modal Edit
     $(document).on("click", ".btnEdit", function () {
@@ -64,16 +97,16 @@
     });
 
     //update from model
-    $("#btnModalUpdate").click(function () {
+    $("#btnModalUpdate").on("click",function () {
 
         let id = $("#modalId").val();
         let name = $("#modalName").val();
         let message = $("#modalMessage").val();
 
-        //if (name === "" || message === "") {
-        //    alert("All Fields are Required");
-        //    return;
-        //}
+        if (name === "" || message === "") {
+            alert("All Fields are Required");
+            return;
+        }
 
         $.ajax({
             url: "/Feedback/Update",
@@ -92,6 +125,22 @@
 
     //Load List
     function loadFeedback() {
+
         $("#Feedback-Container").load("/Feedback/GetAll");
+        //if ($("#Feedback-Container").find("table").length > 0) {
+
+        //    // DATA PRESENT
+        //    $("#landingArea").addClass("d-none");
+        //    $("#Feedback-Container").removeClass("d-none");
+        //    $("#topAddBar").removeClass("d-none");
+
+        //} else {
+
+        //    // NO DATA
+        //    $("#landingArea").removeClass("d-none");
+        //    $("#Feedback-Container").removeClass("d-none");
+        //    $("#topAddBar").addClass("d-none");
+
+        //}
     }
 });

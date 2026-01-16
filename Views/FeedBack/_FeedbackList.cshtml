@@ -1,17 +1,27 @@
 ﻿@model List<StudentFeedback.Models.Feedback>
-<table border="1" cellpadding="5" class="feedback-table">
+@if(Model== null || Model.Count == 0)
+{
+    <div class="text-center mt-10">
+        <h4 class="text-muted">No Student Feedback Found 📭</h4>
+        <p class="text-secondary">Click <b>+Add Student</b> button to add feedback</p>
+    </div>
+}
+<table class="table table-bordered table-striped mt-3" style="border-radius:4px">
+    <thead class="table-primary">
     <tr>
         <th>Name</th>
-        <th>Message</th>
-        <th>Action</th>
+        <th>Feedback</th>
+        <th width="150">Action</th>
     </tr>
+    </thead>
+    <tbody> 
     @foreach(var s in Model)
     {
         <tr>
             <td>@s.Name</td>
             <td>@s.Message</td>
-            <td><button class="btnDelete" data-id="@s.Id">Delete</button>
-            <button class="btnEdit" data-id="@s.Id">Edit</button></td>
+            <td><button class="btn btn-danger btn-sm btnDelete" data-id="@s.Id">Delete</button>
+            <button class="btn btn-warning btn-sm btnEdit" data-id="@s.Id">Edit</button></td>
         </tr>
     }
 </table>

@@ -1,22 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Student Feedback SPA";
+    ViewData["Title"] = "Ankit Project";
 }
-<h2>Student FeedBack</h2>
-<div class="feedback-form">
-    <input type="text" name="Name" id="txtName" value="" placeholder="Enter The Student Name"/>
-    <br /><br />
-    <textarea id="txtMessage" name="Message" placeholder="Enter the Feedback"></textarea>
-    <br /><br />
-    <input type="hidden" id="hdid" name="Id" value="0"/>
-    <button id="btnSave">Save</button>
+<div id="landingArea" class="container text-center mt-5">
+    <div class="hero-box mb-4">
+        <div class=hero-circle></div>
+        <div class="hero-icon">🎓</div>
+    </div>
+    <h2 class="fw-bold">Student FeedBack System</h2>
+
+    <p class="text-muted" id="statusText">checking Feedback data......</p>
+    @* <button class="btn btn-primary rounded-pill px-4 py-2 shadow d-none" id="btnShowData">Show Student Details</button> *@
+    <button class="btn btn-primary rounded-pill px-4 py-2 shadow d-none" id="btnShowData">
+        Show Student Details
+    </button>
 </div>
-<hr />
-<div id="Feedback-Container"></div>
+@* <div class="d-flex justify-content-end mb-2 d-none" id="topAddBar"> *@
+    <button class="btn btn-success shadow-sm d-none" id="btnOpenAddModal">+Add Student</button>
+@* </div> *@
+<div id="Feedback-Container" class="d-none"></div>
 <div class="modal fade" id="editModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit Feedback</h5>
+                <h5 class="modal-title">Add Feedback</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
@@ -34,6 +40,31 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <button class="btn btn-primary" id="btnModalUpdate">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enter The Student Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modalId" />
+                <div class="mb-2">
+                    <label>Name</label>
+                    <input type="text" id="addName" class="form-control" required />
+                </div>
+                <div class="mb-2">
+                    <label>Feedback</label>
+                    <textarea id="addMessage" class="form-control" required></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" id="btnModalSave">Save</button>
             </div>
         </div>
     </div>
